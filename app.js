@@ -1,5 +1,3 @@
-require('dotenv').config();
-
 const { Configuration, OpenAIApi } = window.openai;
 
 const configuration = new Configuration({
