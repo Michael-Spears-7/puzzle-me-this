@@ -12,27 +12,43 @@ const openai = new OpenAIApi(configuration);
 // Function to generate random words based on the topic
 async function generateWords(topic) {
   const prompt = `Generate 5 random words related to the topic "${topic}".`;
-  const response = await openai.createCompletion({
-    model: 'text-davinci-003',
-    prompt: prompt,
-    max_tokens: 50,
-    temperature: 0.7,
-  });
-  const generatedText = response.data.choices[0].text.trim();
-  return generatedText.split('\n');
+
+  try {
+    const response = await openai.createCompletion({
+      model: 'text-davinci-003',
+      prompt: prompt,
+      max_tokens: 50,
+      temperature: 0.7,
+    });
+    console.log('API response:', response.data);
+    const generatedText = response.data.choices[0].text.trim();
+    return generatedText.split('\n');
+  } catch (error) {
+    console.error('Error:', error);
+    // Handle the error, e.g., return an empty array or display an error message to the user
+    return [];
+  }
 }
 
 // Function to generate clues for the words
 async function generateClues(words) {
   const prompt = `For each of the following words, provide a concise clue:\n\n${words.join('\n')}`;
-  const response = await openai.createCompletion({
-    model: 'text-davinci-003',
-    prompt: prompt,
-    max_tokens: 200,
-    temperature: 0.7,
-  });
-  const generatedText = response.data.choices[0].text.trim();
-  return generatedText.split('\n');
+
+  try {
+    const response = await openai.createCompletion({
+      model: 'text-davinci-003',
+      prompt: prompt,
+      max_tokens: 200,
+      temperature: 0.7,
+    });
+    console.log('API response:', response.data);
+    const generatedText = response.data.choices[0].text.trim();
+    return generatedText.split('\n');
+  } catch (error) {
+    console.error('Error:', error);
+    // Handle the error, e.g., return an empty array or display an error message to the user
+    return [];
+  }
 }
 
 // Function to create the crossword puzzle grid
