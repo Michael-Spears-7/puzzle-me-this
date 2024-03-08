@@ -1,0 +1,25 @@
+#crossword-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 2px;
+  margin: 20px 0;
+}
+
+.cell {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ccc;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#clues {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+#across-clues, #down-clues {
+  width: 45%;
+}
