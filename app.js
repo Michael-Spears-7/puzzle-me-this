@@ -1,9 +1,9 @@
 const { Configuration, OpenAIApi } = window.openai;
 
-const configuration = new Configuration({
+const configuration = new window.openai.Configuration({
   apiKey: process.env.OPENAI_API_KEY,
 });
-const openai = new OpenAIApi(configuration);
+const openai = new window.openai.OpenAIApi(configuration);
 
 // HELPER FUNTIONS
 
