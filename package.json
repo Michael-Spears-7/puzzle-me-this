@@ -2,5 +2,16 @@
   "dependencies": {
     "dotenv": "^16.4.5",
     "openai": "^4.28.4"
-  }
+  },
+  "name": "puzzle-me-this",
+  "description": "A crossword puzzle game where the player provides the topic and the number of words, and then the program generates the puzzle using the topic to determine the words and clues. The player will then attempt to solve the puzzle by entering the words into the puzzle. Additionally, you want the program to have a well-designed graphical user interface (GUI) for user input.",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
